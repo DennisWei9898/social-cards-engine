@@ -40,6 +40,21 @@
 
 ---
 
+## 🎬 實例：now6pm（一個真實品牌長出來的樣子）
+
+> `now6pm` 是用這套引擎做的個人品牌 pack——**navy 藍焰・超大粗標・電光藍點睛・尾部頭像品牌標**。
+> 同一套引擎，換一份 brand pack 就是另一種風格（食品客戶就長成暖米金明體）。
+
+<p align="center">
+  <img src="docs/showcase/now6pm-01-cover.png" width="32%" alt="now6pm 封面鉤子" />
+  <img src="docs/showcase/now6pm-02-data.png" width="32%" alt="now6pm 數據卡" />
+  <img src="docs/showcase/now6pm-03-cta.png" width="32%" alt="now6pm CTA" />
+</p>
+
+📱 **看實際發文效果** → [Instagram 完整 9 張輪播](https://www.instagram.com/p/DaQYu2WgU-J/)
+
+---
+
 ## 👥 給誰用
 
 - 🧑‍💻 **個人 KOL / 自媒體** — 建立一眼認得出的個人視覺，每篇都像同一個人做的
@@ -98,18 +113,30 @@
 
 ---
 
-## ⚡ 快速開始
+## ⚡ 快速開始（你用「講」的，不寫 Python）
+
+> 這是一個 **Claude Code skill**——你跟 Claude 對話，它幫你出圖。
+> Python 3 + Chrome 只是**引擎渲染圖片那一步、Claude 會自己呼叫的相依工具**，你不用手動跑。
+
+```
+1. 安裝 skill：把這個 repo 放進 Claude 的 skills（~/.claude/skills/social-cards）
+2. 跟 Claude 說：「用 social-cards 幫我把這篇文章做成 IG 圖卡」
+3. 第一次它會問你要哪條：
+   · 用預設風格？（navy 海報 / 暖色 Morandi / 暖大地 ELI5 / 迷因鄉民）
+   · 還是像 Claude Design 一樣，跟我「聊」出你自己的風格？
+     —— 訪談你，或你貼幾篇貼文/官網/簡報，我拆解成你的 brand pack
+4. 出一排圖卡 → joker 審一輪 → 定版
+```
+
+<details><summary>進階：想自己手動跑渲染腳本（選用）</summary>
 
 ```bash
-# 需要：macOS + Google Chrome + Python 3
+# 需要 macOS + Google Chrome + Python 3（僅「渲染成 PNG」那步用到）
 git clone https://github.com/DennisWei9898/social-cards-engine
-cd social-cards-engine
-
-# 1. 選（或新建）一個 brand pack：brands/<你的品牌>/
-# 2. 複製該 pack 的 render_template.py 到你的專案，改掉 CARDS 內容
-# 3. 出圖
-python3 brands/meme/render_template.py
+python3 brands/<你的品牌>/render_template.py   # 改掉 CARDS 內容後
 ```
+Claude 平常就是在背後幫你跑這一行——你不用自己來。
+</details>
 
 ---
 
