@@ -1,112 +1,138 @@
-# social-cards-engine · 品牌無關的社群圖卡引擎 🎨
+<div align="center">
 
-> 一個萬用的 IG／Threads／FB 圖卡引擎——**換一個「品牌插件」就換一種風格**。
-> 概念像「Claude Design for 社群圖卡」：工具不變，品牌可以無限切換。
+# 🎨 social-cards-engine
 
----
+### 任何品牌、任何 KOL，都能擁有「自己風格」的社群圖卡
 
-## 這是什麼？（用做菜比喻，一分鐘看懂）
+**一套引擎 × 換一個品牌插件 = 換一種風格。**
+你的配色、你的字體、你的語氣——出圖自動長成「你」的樣子。
 
-你想像開一間**中央廚房**：
+`品牌無關的圖卡引擎` · `一品牌一插件` · `內建 AI 審稿員`
 
-- 🍳 **引擎 = 廚房 + 鍋具**：固定的一套設備（HTML+CSS 模板 → 用瀏覽器截圖出 1080 圖卡）。廚房不換。
-- 📖 **品牌插件（brand pack）= 食譜 + 調味**：A 客戶要清爽日式、B 客戶要濃郁美式——**換一份食譜就好，廚房不用改**。
-- 🧑‍⚖️ **審核員（joker）= 試吃員**：菜端出來之前，先給一個「獨立、專門找碴」的試吃員打分，不合格退回重做。
-
-所以：**一套引擎，服務很多品牌，每個品牌長得都不一樣，但都用同一個廚房產出。**
+</div>
 
 ---
 
-## 你會拿到什麼
+## 為什麼需要它
 
-| 東西 | 白話 |
+做社群圖卡最痛的不是「做一張」，是——
+
+> 每一張都要長得**一致**，換個品牌又得**打掉重做**。
+
+- 幫 5 個客戶做圖 = 5 套風格塞在腦子裡 😵
+- 今天想試迷因風、明天想試精品風 = 重來一次
+- 圖做得出來，但**不知道會不會擴散、好不好看** 🤷
+
+這個引擎把「風格」從你的腦袋，搬進**一個檔案**。
+就像 Claude Design 把品牌變成一份 brand kit——**每張圖卡都從那個檔案長出來**。
+
+---
+
+## 💡 核心概念：一個廚房，很多食譜
+
+| | 是什麼 | 換不換 |
+|---|---|---|
+| 🍳 **引擎** | 廚房 + 鍋具（HTML→截圖出 1080 圖卡）| 固定，不換 |
+| 📖 **brand pack** | 食譜 + 調味（配色 / 字體 / 尺寸 / 語氣）| **換品牌就換一份** |
+| 🧑‍⚖️ **joker** | 獨立試吃員（出圖前逐條打分、不合格退回）| 固定 |
+
+> 結論：**一套引擎，服務個人 KOL、品牌小編、客戶案——每個都長不一樣，但都出自同一個廚房。**
+
+---
+
+## 👥 給誰用
+
+- 🧑‍💻 **個人 KOL / 自媒體** — 建立一眼認得出的個人視覺，每篇都像同一個人做的
+- 🏢 **品牌小編 / 代理商** — 一個引擎服務多客戶，每個客戶掛一個插件，不再腦內切換
+- ✍️ **內容創作者** — 把文章 / 教學一鍵變成會擴散的輪播
+
+---
+
+## 🚀 30 秒看懂運作
+
+```
+你的主題 / 文章
+      │
+      ▼   ① 選一個 brand pack（你的風格檔）
+   [ 引擎 ] ──▶ 拆卡 → HTML 模板 → Chrome 截圖出一排 PNG
+      │
+      ▼   ② 丟給 joker 審一輪（結構 / 擴散 / 幽默，逐條 PASS·FAIL）
+   不過 → 照建議改 → 再審
+      │
+      ▼   ③ 定版
+   一排「長得像你、又會擴散」的 IG 輪播圖卡 ✨
+```
+
+---
+
+## 📦 你會拿到
+
+| | 白話 |
 |---|---|
-| **圖卡引擎** | 把「主題／文章／教學」變成一排輪播圖卡，HTML+CSS → Chrome headless 截圖出 PNG |
-| **通用模板** | navy / 暖色 Morandi / 暖大地 ELI5 幾套起手模板 |
-| **brand pack 架構** | 「一個品牌一個插件」的資料夾約定，教你怎麼新增自己的品牌 |
-| **知識型圖卡方法論** | `knowledge_carousel_rubric`：8–10 張的結構模板 + 讓內容「被存、被傳」的擴散規則 |
-| **兩個獨立審核員** | `carousel-joker`（正經知識型）、`meme-joker`（迷因型）——預設有罪推定、禁止客套，逐條 PASS/FAIL |
-| **迷因 pack** | 白底黃黑紅 Impact 大字的鄉民迷因風（附**版權提醒**） |
+| **圖卡引擎** | 主題 / 文章 → 一排輪播圖卡（HTML+CSS → Chrome headless → PNG）|
+| **通用模板** | navy / 暖色 Morandi / 暖大地 ELI5 幾套起手式 |
+| **brand pack 架構** | 「一品牌一插件」的資料夾約定 + 怎麼新增你自己的品牌 |
+| **擴散方法論** | 8–10 張的結構模板 + 讓內容「被存、被傳」的規則 |
+| **兩個 AI 審稿員** | `carousel-joker`（正經知識型）、`meme-joker`（迷因型，把「好笑」拆成可判定的要素）|
+| **內建迷因 pack** | 白底黃黑紅 Impact 鄉民風（附版權提醒）|
 
 ---
 
-## 核心概念：引擎 vs 品牌插件
+## 🧑‍⚖️ 為什麼要「審稿員」
 
-```
-主題 / 文章
-   │
-   ▼  [引擎] social-cards：拆卡 → HTML 模板 → 截圖出 PNG
-   │        ▲
-   │        └── 載入哪個 brand pack，就出哪種風格（配色/字體/尺寸/母題/敘事）
-   ▼
-[審核] joker：對「結構/擴散/幽默」逐條 PASS/FAIL → 不過退回改 → 收斂
-   ▼
-成品：一排 IG 輪播圖卡
-```
+好內容 ≠ 會擴散，好看 ≠ 好笑。所以出圖前先過一關**獨立、專門找碴、禁止客套**的 AI 審稿員：
 
-**重點**：引擎裡的模板**只是通用起手式，不是「某個人的固定風格」**。要做誰的風格，就掛誰的 brand pack。
+- **carousel-joker** — 正經知識型：封面是鉤子還是類目？有沒有速查卡？CTA 有沒有「傳給某人」？
+- **meme-joker** — 迷因型：1 秒看懂嗎？有反差嗎？切身痛點嗎？（把「幽默感」變成可打分的清單）
+
+不合格就退回改，改到過為止。**寫的人 ≠ 審的人**。
 
 ---
 
-## 資料夾結構
+## 🤝 兩個「好朋友」（推薦搭配安裝）
 
-```
-social-cards-engine/
-├── SKILL.md                      # 引擎說明（怎麼拆卡、渲染、過閘）
-├── templates/                    # 通用模板（navy / morandi / eli5）+ icons + render 範例
-├── references/
-│   └── knowledge_carousel_rubric.md   # 知識型圖卡結構 + 擴散規則（方法論）
-├── skills/
-│   ├── carousel-joker/           # 正經知識型輪播審核員
-│   └── meme-joker/               # 迷因型輪播審核員（定義「幽默感」為可判定要素）
-└── brands/
-    ├── README.md                 # brand pack 架構 + 怎麼新增品牌
-    └── meme/                      # 內建範例：迷因 brand pack
-        ├── brand.md
-        ├── render_template.py
-        └── memes/                # 梗圖放這（自己抓，見下方版權）
+這個引擎專心做「產圖 + 結構」。另外兩塊裝了體驗更完整：
+
+- 🎨 **美感 / 版面 → 推薦裝 `huashu-design`（HTML 設計 skill）** — 幫你把圖置中、不變形、IG 排版顧到位。
+- 📈 **演算法 + 半自動發文 → 推薦裝 [Hao0321 的 `social-post`](https://github.com/Hao0321/claude-skill-social-post)** — 內含 2026 社群演算法訊號權重（私訊分享 > 收藏 > 讚）與半自動發文。本引擎的擴散規則就站在它肩膀上。
+
+---
+
+## ⚡ 快速開始
+
+```bash
+# 需要：macOS + Google Chrome + Python 3
+git clone https://github.com/DennisWei9898/social-cards-engine
+cd social-cards-engine
+
+# 1. 選（或新建）一個 brand pack：brands/<你的品牌>/
+# 2. 複製該 pack 的 render_template.py 到你的專案，改掉 CARDS 內容
+# 3. 出圖
+python3 brands/meme/render_template.py
 ```
 
 ---
 
-## 快速開始
+## ⚠️ 迷因梗圖的版權（請先讀）
 
-1. 需要：macOS + Google Chrome（`--headless` 截圖）+ Python 3。
-2. 選一個 brand pack（或照 `brands/README.md` 新增自己的）。
-3. 複製該 pack 的 `render_template.py` 到你的專案，改掉 `CARDS`（每張卡的標題/內容）。
-4. 跑 `python3 render_template.py` → 出一排 1080 PNG。
-5. 丟給 `carousel-joker` / `meme-joker` 審一輪 → 照建議改 → 定版。
+- 本 repo **不含任何梗圖檔**——經典梗（Drake / This is fine / Pikachu…）**大多仍有版權**，公開散布會侵權。
+- 自己去 [imgflip](https://imgflip.com/memetemplates) / [memes.tw](https://memes.tw) 抓乾淨模板放進 `memes/`。
+- **個人非商用**風險較低；**品牌 / 客戶案**請改**自繪原創**或**買授權**（`meme-joker` 會直接把用版權梗的品牌案判 FAIL）。
 
 ---
 
-## 兩個「好朋友」工具（推薦搭配安裝）
+## 📄 授權
 
-這個引擎專心做「產圖 + 結構」。另外兩塊建議搭配安裝，體驗更完整：
-
-- 🎨 **美感／版面審查 → 推薦安裝 [`huashu-design`](https://github.com/) 這類 HTML 設計 skill**：幫你把梗圖置中、不變形、IG 排版顧到位。本引擎的 joker 只審「結構/擴散/幽默」，**美感建議交給設計 skill**。
-- 📈 **演算法訊號 + 半自動發文 → 推薦安裝 [Hao0321 的 `social-post` skill](https://github.com/Hao0321/claude-skill-social-post)**：內含 2026 社群演算法訊號權重（私訊分享 > 收藏 > 讚）與半自動發文流程。本引擎的擴散規則就是站在它的肩膀上。
-
-> 沒裝這兩個也能用，但裝了會從「產得出圖」升級到「產得出**會擴散又好看**的圖」。
+MIT License — 自由修改、使用、商用，保留授權標註即可。
 
 ---
 
-## ⚠️ 迷因梗圖的版權提醒（很重要）
+<div align="center">
 
-- 內建的迷因 pack **不含任何梗圖檔**——經典梗（Drake / This is fine / Surprised Pikachu…）**大多仍有版權**，公開散布會侵權。
-- 請自己去 **[imgflip](https://imgflip.com/memetemplates) / [memes.tw](https://memes.tw)** 抓乾淨模板放進 `memes/`。
-- **個人非商用**貼文用經典梗風險較低；**品牌／客戶案**請改用**自繪原創**或**買授權**的梗圖（`meme-joker` 會直接把用版權梗的品牌案判 FAIL）。
+## 🤝 想合作？
 
----
+打造品牌內容自動化、社群圖卡 pipeline，或想聊 AI 工作流 —
 
-## 授權
+**✉️ dennis.xd.wei@gmail.com**　·　**💼 [LinkedIn](https://www.linkedin.com/in/dennis-wei-47393a14a/)**
 
-MIT License — 可自由修改、使用、商用，保留授權標註即可。
-
----
-
-## 🤝 合作方式
-
-打造品牌內容自動化、社群圖卡 pipeline、或想聊 AI 工作流，歡迎聯絡：
-
-- ✉️ Email：**dennis.xd.wei@gmail.com**
-- 💼 LinkedIn：**https://www.linkedin.com/in/dennis-wei-47393a14a/**
+</div>
