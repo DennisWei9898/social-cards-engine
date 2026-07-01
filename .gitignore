@@ -1,0 +1,11 @@
+# 不上傳圖片：避免版權梗圖 / 個人素材外流
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+# 但保留範例說明
+!**/README*.md
+__pycache__/
+*.pyc
+.DS_Store

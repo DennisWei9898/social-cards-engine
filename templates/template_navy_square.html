@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<title>Card</title>
+<style>
+  /* === Brand palette: 品牌識別 deep navy + electric blue === */
+  :root {
+    --bg: #14233B;             /* deep midnight navy */
+    --bg-card: #1F3252;        /* lifted card navy */
+    --ink: #F2EDE0;            /* warm cream text */
+    --accent: #4A8FE7;         /* electric awakening blue */
+    --accent-soft: #2A4A75;    /* muted deep blue */
+    --accent-glow: #60A5FA;    /* lighter blue glow */
+    --gray-mid: #8FA3C2;       /* muted blue-gray secondary */
+    --shadow: 0 6px 24px rgba(74, 143, 231, 0.20);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+  html, body {
+    width: 1080px; height: 1080px;  /* IG SQUARE — 使用者 預設 */
+    background: var(--bg);
+    font-family: 'Noto Sans TC', 'PingFang TC', sans-serif;
+    color: var(--ink);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* === Decorative dots — electric blue === */
+  .dot-grid {
+    position: absolute;
+    width: 80px; height: 80px;
+    background-image: radial-gradient(circle, var(--accent) 3px, transparent 4px);
+    background-size: 22px 22px;
+    opacity: 0.4;
+  }
+  .dot-tl { top: 40px;  left: 50px; }
+  .dot-tr { top: 40px;  right: 50px; }
+  .dot-bl { bottom: 70px; left: 50px; width: 70px; height: 50px; }
+
+  /* === Top right awakening blob === */
+  .blob {
+    position: absolute;
+    top: -90px; right: -90px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle at center, var(--accent-glow) 0%, var(--accent) 40%, transparent 75%);
+    border-radius: 50%;
+    opacity: 0.55;
+    filter: blur(8px);
+  }
+  /* Bottom-right flame (Solo Leveling vibe) */
+  .flame {
+    position: absolute;
+    bottom: -50px; right: 70px;
+    width: 180px; height: 240px;
+    background: radial-gradient(ellipse at bottom, var(--accent-glow) 0%, var(--accent) 30%, transparent 70%);
+    opacity: 0.18;
+    filter: blur(20px);
+    pointer-events: none;
+  }
+
+  /* === Header (kicker + title) === */
+  .kicker {
+    position: absolute;
+    top: 110px; left: 70px;
+    font-size: 28px; font-weight: 500;
+    color: var(--gray-mid);
+    letter-spacing: 1px;
+  }
+  .kicker .accent { color: var(--accent); margin: 0 10px; }
+
+  .title-bar {
+    position: absolute;
+    top: 160px; left: 70px;
+    width: 7px; height: 95px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  .title {
+    position: absolute;
+    top: 150px; left: 95px;
+    font-size: 78px; font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -2px;
+  }
+  .title.compact { font-size: 70px; line-height: 1.05; }
+
+  .subtitle {
+    position: absolute;
+    top: 295px; left: 70px;
+    width: 940px;
+    font-size: 32px; font-weight: 500;
+    line-height: 1.4;
+    color: var(--gray-mid);
+  }
+  .subtitle .accent { color: var(--accent); }
+
+  /* === Numbered steps === */
+  .steps {
+    position: absolute;
+    top: 360px; left: 70px;
+    width: 940px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .step {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 20px 26px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    box-shadow: var(--shadow);
+    min-height: 110px;
+  }
+  .step .num {
+    flex-shrink: 0;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 28px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    letter-spacing: -1px;
+    box-shadow: 0 0 18px rgba(74, 143, 231, 0.5);
+  }
+  .step .body { flex: 1; }
+  .step .body h3 {
+    font-size: 34px; font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 3px;
+  }
+  .step .body p {
+    font-size: 22px; font-weight: 500;
+    color: var(--gray-mid);
+    line-height: 1.4;
+  }
+  .step .icon {
+    flex-shrink: 0;
+    width: 90px; height: 90px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent);
+  }
+  .step .icon svg { width: 100%; height: 100%; }
+
+  .arrow-down {
+    width: 36px; height: 36px;
+    margin: -4px auto;
+    color: var(--gray-mid);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .arrow-down svg { width: 100%; height: 100%; }
+
+  /* === Footer === */
+  .divider {
+    position: absolute;
+    bottom: 110px; left: 70px;
+    width: 940px; height: 2px;
+    background: var(--accent);
+    opacity: 0.4;
+  }
+  .footer {
+    position: absolute;
+    bottom: 50px; left: 70px;
+    width: 940px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 24px; font-weight: 700;
+  }
+  .footer .handle { color: var(--ink); }
+  .footer .tag { color: var(--gray-mid); font-weight: 500; }
+
+  /* === Cover variant (no steps, big title + stat) === */
+  body.cover .title { font-size: 84px; line-height: 1.0; top: 200px; }
+  body.cover .title-bar { top: 210px; height: 180px; }
+  body.cover .subtitle { top: 410px; font-size: 30px; line-height: 1.4; font-weight: 500; color: var(--gray-mid); }
+  body.cover .big-stat {
+    position: absolute;
+    top: 540px; left: 70px; width: 940px;
+    text-align: center;
+    font-size: 280px; font-weight: 900;
+    color: var(--accent);
+    line-height: 0.9;
+    letter-spacing: -10px;
+    text-shadow: 0 0 40px rgba(74, 143, 231, 0.3);
+  }
+  body.cover .big-stat .unit { font-size: 90px; vertical-align: top; margin-left: -8px; }
+  body.cover .stat-caption {
+    position: absolute;
+    top: 870px; left: 70px; width: 940px;
+    text-align: center;
+    font-size: 30px; font-weight: 700; color: var(--ink);
+  }
+
+  /* === CTA variant === */
+  body.cta .cta-text {
+    position: absolute;
+    top: 460px; left: 70px; width: 940px;
+    text-align: center;
+    font-size: 46px; font-weight: 700;
+    color: var(--ink); line-height: 1.4;
+  }
+  body.cta .cta-bubble {
+    position: absolute;
+    top: 660px; left: 50%; transform: translateX(-50%);
+    width: 480px; padding: 38px 36px;
+    background: var(--accent); color: var(--bg);
+    border-radius: 24px;
+    text-align: center;
+    font-size: 80px; font-weight: 900;
+    box-shadow: 0 0 40px rgba(74, 143, 231, 0.6), var(--shadow);
+  }
+</style>
+</head>
+<body class="{{BODY_CLASS}}">
+
+  <div class="blob"></div>
+  <div class="flame"></div>
+  <div class="dot-grid dot-tl"></div>
+  <div class="dot-grid dot-tr"></div>
+  <div class="dot-grid dot-bl"></div>
+
+  {{CONTENT}}
+
+  <div class="divider"></div>
+  <div class="footer">
+    <div class="handle">@yourhandle</div>
+    <div class="tag">{{TAG}}</div>
+  </div>
+
+</body>
+</html>

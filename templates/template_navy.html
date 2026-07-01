@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<title>Card</title>
+<style>
+  /* === Brand palette: 品牌識別 deep navy + electric blue === */
+  :root {
+    --bg: #14233B;             /* deep midnight navy */
+    --bg-card: #1F3252;        /* lifted card navy */
+    --ink: #F2EDE0;            /* warm cream text on navy */
+    --accent: #4A8FE7;         /* electric awakening blue */
+    --accent-soft: #2A4A75;    /* muted deep blue */
+    --accent-glow: #60A5FA;    /* lighter blue for glows */
+    --gray-mid: #8FA3C2;       /* muted blue-gray secondary */
+    --shadow: 0 6px 24px rgba(74, 143, 231, 0.20);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+  html, body {
+    width: 1080px; height: 1350px;  /* 4:5 portrait */
+    background: var(--bg);
+    font-family: 'Noto Sans TC', 'PingFang TC', sans-serif;
+    color: var(--ink);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* === Decorative dots — electric blue === */
+  .dot-grid {
+    position: absolute;
+    width: 100px; height: 100px;
+    background-image: radial-gradient(circle, var(--accent) 4px, transparent 5px);
+    background-size: 25px 25px;
+    opacity: 0.45;
+  }
+  .dot-tl { top: 50px;  left: 60px; }
+  .dot-tr { top: 50px;  right: 60px; }
+  .dot-bl { bottom: 80px; left: 60px; width: 80px; height: 60px; }
+
+  /* === Top right awakening flame blob === */
+  .blob {
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle at center, var(--accent-glow) 0%, var(--accent) 40%, transparent 75%);
+    border-radius: 50%;
+    opacity: 0.55;
+    filter: blur(8px);
+  }
+  /* Subtle awakening flame strokes (Solo Leveling vibe) */
+  .flame {
+    position: absolute;
+    bottom: -50px; right: 80px;
+    width: 200px; height: 280px;
+    background: radial-gradient(ellipse at bottom, var(--accent-glow) 0%, var(--accent) 30%, transparent 70%);
+    opacity: 0.18;
+    filter: blur(20px);
+    pointer-events: none;
+  }
+
+  /* === Header (kicker + title) === */
+  .kicker {
+    position: absolute;
+    top: 170px; left: 80px;
+    font-size: 32px; font-weight: 500;
+    color: var(--gray-mid);
+    letter-spacing: 1px;
+  }
+  .kicker .accent { color: var(--accent); margin: 0 12px; }
+
+  .title-bar {
+    position: absolute;
+    top: 230px; left: 80px;
+    width: 8px; height: 110px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  .title {
+    position: absolute;
+    top: 218px; left: 110px;
+    font-size: 96px; font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+  }
+  .title.compact { font-size: 84px; line-height: 1.05; }
+
+  .subtitle {
+    position: absolute;
+    top: 360px; left: 80px;
+    width: 920px;
+    font-size: 42px; font-weight: 700;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .subtitle .accent { color: var(--accent); }
+
+  /* === Numbered steps === */
+  .steps {
+    position: absolute;
+    top: 540px; left: 80px;
+    width: 920px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .step {
+    background: var(--bg-card);
+    border-radius: 22px;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    box-shadow: var(--shadow);
+    min-height: 125px;
+  }
+  .step .num {
+    flex-shrink: 0;
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 32px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    letter-spacing: -1px;
+    box-shadow: 0 0 20px rgba(74, 143, 231, 0.5);
+  }
+  .step .body { flex: 1; }
+  .step .body h3 {
+    font-size: 38px; font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 4px;
+  }
+  .step .body p {
+    font-size: 24px; font-weight: 500;
+    color: var(--gray-mid);
+    line-height: 1.4;
+  }
+  .step .icon {
+    flex-shrink: 0;
+    width: 105px; height: 105px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent);
+  }
+  .step .icon svg { width: 100%; height: 100%; }
+
+  .arrow-down {
+    width: 48px; height: 48px;
+    margin: -6px auto;
+    color: var(--gray-mid);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .arrow-down svg { width: 100%; height: 100%; }
+
+  /* === Footer === */
+  .divider {
+    position: absolute;
+    bottom: 130px; left: 80px;
+    width: 920px; height: 2px;
+    background: var(--accent);
+    opacity: 0.4;
+  }
+  .footer {
+    position: absolute;
+    bottom: 60px; left: 80px;
+    width: 920px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 28px; font-weight: 700;
+  }
+  .footer .handle { color: var(--ink); }
+  .footer .tag { color: var(--gray-mid); font-weight: 500; }
+
+  /* === Cover variant (no steps, just big title) === */
+  body.cover .title { font-size: 100px; line-height: 1.0; top: 290px; }
+  body.cover .title-bar { top: 295px; height: 220px; }
+  body.cover .subtitle { top: 540px; font-size: 38px; line-height: 1.4; font-weight: 500; color: var(--gray-mid); }
+  body.cover .big-stat {
+    position: absolute;
+    top: 700px; left: 80px; width: 920px;
+    text-align: center;
+    font-size: 340px; font-weight: 900;
+    color: var(--accent);
+    line-height: 0.9;
+    letter-spacing: -10px;
+  }
+  body.cover .big-stat .unit { font-size: 110px; vertical-align: top; margin-left: -10px; }
+  body.cover .stat-caption {
+    position: absolute;
+    top: 1080px; left: 80px; width: 920px;
+    text-align: center;
+    font-size: 36px; font-weight: 700; color: var(--ink);
+  }
+
+  /* === CTA variant === */
+  body.cta .cta-text {
+    position: absolute;
+    top: 580px; left: 80px; width: 920px;
+    text-align: center;
+    font-size: 56px; font-weight: 700;
+    color: var(--ink); line-height: 1.4;
+  }
+  body.cta .cta-bubble {
+    position: absolute;
+    top: 820px; left: 50%; transform: translateX(-50%);
+    width: 540px; padding: 48px 40px;
+    background: var(--accent); color: var(--bg);
+    border-radius: 28px;
+    text-align: center;
+    font-size: 96px; font-weight: 900;
+    box-shadow: 0 0 40px rgba(74, 143, 231, 0.6), var(--shadow);
+  }
+</style>
+</head>
+<body class="{{BODY_CLASS}}">
+
+  <div class="blob"></div>
+  <div class="flame"></div>
+  <div class="dot-grid dot-tl"></div>
+  <div class="dot-grid dot-tr"></div>
+  <div class="dot-grid dot-bl"></div>
+
+  {{CONTENT}}
+
+  <div class="divider"></div>
+  <div class="footer">
+    <div class="handle">@yourhandle</div>
+    <div class="tag">{{TAG}}</div>
+  </div>
+
+</body>
+</html>

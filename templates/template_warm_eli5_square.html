@@ -1,0 +1,66 @@
+<!doctype html>
+<!--
+  Variant C · Warm-Earth ELI5 Deck (1080×1080 IG square)
+  用途：當輪播來源是 使用者 在 reports/ 裡的 ELI5 簡報時，配色對齊「那一份簡報」而非 navy。
+  視覺 DNA：espresso 深咖啡底 + 赤陶橙裝飾圓 + 米白圓角 callout 卡（內深字）+ 琥珀金/鴨綠 accent。
+  Placeholder：{{DECO}}（裝飾圓）/ {{CONTENT}} / {{TAG}}（footer 右）/ {{PAGE}}（頁碼）
+  ⚠️ 踩坑：左上大圓會壓到左對齊的 kicker/title——
+    - 封面/CTA 用 circle-tl（大圓）時，kicker 必須加 .on-terra（改米白才不會赤陶壓赤陶隱形）
+    - 內容卡改用 circle-tr（右上圓），避開左側 kicker/title
+-->
+<html lang="zh-Hant"><head><meta charset="UTF-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+:root{
+  --bg:#2A1208;          /* espresso 深咖啡 */
+  --bg2:#371A0C;
+  --terra:#C85A3C;       /* 赤陶橙 主色 */
+  --terra-deep:#B83A2C;  /* 深赤陶 / 警示 */
+  --cream:#F5EBDC;       /* 暖米白文字 */
+  --card:#FBF4E8;        /* callout 米白卡 */
+  --gold:#C8951E;        /* 琥珀金 accent */
+  --teal:#3A9E8F;        /* 鴨綠 第二 accent */
+  --brown:#7A4A38;       /* 棕灰 次要文字 */
+  --peach:#E8B98C;       /* 蜜桃 裝飾 */
+  --ink:#2A1208;         /* 卡內深字 */
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+html,body{width:1080px;height:1080px;background:var(--bg);overflow:hidden;position:relative;
+  font-family:'Noto Sans TC','PingFang TC',sans-serif;color:var(--cream);}
+.circle-tl{position:absolute;top:-300px;left:-230px;width:560px;height:560px;border-radius:50%;background:var(--terra);}
+.circle-tr{position:absolute;top:-230px;right:-210px;width:470px;height:470px;border-radius:50%;background:var(--terra);opacity:.92;}
+.circle-br{position:absolute;bottom:-220px;right:-180px;width:420px;height:420px;border-radius:50%;background:var(--peach);opacity:.9;}
+.circle-br.dim{opacity:.14;}
+.kicker{position:absolute;top:96px;left:90px;font-size:30px;font-weight:700;color:var(--terra);letter-spacing:3px;}
+.kicker.on-terra{color:var(--cream);opacity:.92;}
+.bar{position:absolute;left:90px;width:9px;background:var(--terra);border-radius:3px;}
+.title{position:absolute;left:118px;font-weight:900;line-height:1.12;letter-spacing:-1px;color:var(--cream);}
+.sub{position:absolute;left:90px;width:900px;font-size:33px;font-weight:500;line-height:1.5;color:var(--peach);}
+.sub b{color:var(--gold);font-weight:900;}
+.steps{position:absolute;left:90px;width:900px;display:flex;flex-direction:column;gap:24px;}
+.step{background:var(--card);border-radius:26px;padding:28px 34px;display:flex;align-items:center;gap:26px;box-shadow:0 10px 30px rgba(0,0,0,.28);}
+.step .num{flex-shrink:0;width:74px;height:74px;border-radius:50%;background:var(--terra);color:var(--card);font-size:30px;font-weight:900;display:flex;align-items:center;justify-content:center;letter-spacing:-1px;}
+.step.warn .num{background:var(--terra-deep);}
+.step.fix .num{background:var(--teal);}
+.step .b{flex:1;}
+.step .b h3{font-size:40px;font-weight:900;line-height:1.12;color:var(--ink);margin-bottom:4px;}
+.step .b p{font-size:25px;font-weight:500;line-height:1.42;color:var(--brown);}
+.step .ic{flex-shrink:0;width:92px;height:92px;display:flex;align-items:center;justify-content:center;color:var(--terra);}
+.step.fix .ic{color:var(--teal);} .step.warn .ic{color:var(--terra-deep);}
+.step .ic svg{width:100%;height:100%;}
+.arrow{width:40px;height:40px;margin:-8px auto;color:var(--peach);opacity:.8;}
+.arrow svg{width:100%;height:100%;}
+.divider{position:absolute;bottom:118px;left:90px;width:900px;height:2px;background:var(--terra);opacity:.35;}
+.footer{position:absolute;bottom:58px;left:90px;width:900px;display:flex;justify-content:space-between;align-items:center;font-size:25px;font-weight:700;}
+.footer .h{color:var(--cream);} .footer .t{color:var(--peach);font-weight:500;opacity:.85;}
+.page{position:absolute;bottom:60px;right:54px;font-size:24px;font-weight:700;color:var(--peach);opacity:.6;}
+.bigstat{position:absolute;left:90px;width:900px;text-align:center;font-weight:900;color:var(--terra);line-height:.9;letter-spacing:-6px;}
+.bigstat .u{font-size:.34em;vertical-align:super;}
+.statcap{position:absolute;left:90px;width:900px;text-align:center;font-size:34px;font-weight:900;color:var(--cream);}
+.swipe{position:absolute;left:90px;width:900px;background:var(--card);border-radius:24px;padding:30px 36px;box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:32px;font-weight:900;color:var(--terra-deep);display:flex;align-items:center;gap:16px;}
+.ctatext{position:absolute;left:90px;width:900px;text-align:center;font-size:42px;font-weight:700;line-height:1.5;color:var(--cream);}
+.bubble{position:absolute;left:50%;transform:translateX(-50%);background:var(--terra);color:var(--card);border-radius:30px;padding:34px 54px;font-size:80px;font-weight:900;box-shadow:0 12px 36px rgba(0,0,0,.35);}
+</style></head><body>{{DECO}}{{CONTENT}}
+<div class="divider"></div>
+<div class="footer"><div class="h">@yourhandle</div><div class="t">{{TAG}}</div></div>
+<div class="page">{{PAGE}}</div>
+</body></html>
