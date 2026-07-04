@@ -10,5 +10,7 @@ __pycache__/
 *.pyc
 .DS_Store
 
-# 例外：README 用的 now6pm 風格 showcase 圖（Dennis 個人品牌，刻意公開推廣）
+# 例外：README 用的 showcase 圖（now6pm navy + 無版權梗的 meme 風，刻意公開推廣）
 !docs/showcase/*.png
+# 例外：README 頂部風格切換示意 GIF
+!docs/demo.gif
