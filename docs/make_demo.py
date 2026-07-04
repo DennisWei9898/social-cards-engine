@@ -97,7 +97,7 @@ def build():
     pal = combo.quantize(colors=256, method=Image.FASTOCTREE)
     qframes = [f.quantize(palette=pal, dither=Image.NONE) for f in frames]
 
-    gif = os.path.join(DOCS, "demo-styles.gif")
+    gif = os.path.join(DOCS, "demo-loop.gif")
     # disposal=1（不清除背景）→ 切換不閃黑；optimize=False 保整張不透明幀
     qframes[0].save(gif, save_all=True, append_images=qframes[1:],
                     duration=durations, loop=0, disposal=1, optimize=False)
