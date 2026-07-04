@@ -2,11 +2,13 @@
 
 # social-cards-engine
 
-**Brand-agnostic social card engine — one engine, swap a brand pack, get a new style.**
-**品牌無關的社群圖卡引擎 —— 一套引擎，換一個品牌插件，換一種風格。**
+### The Claude Design for IG carousels · IG 圖卡版的 Claude Design
 
-Your palette, your fonts, your voice — every card comes out looking like *you*.
-你的配色、你的字體、你的語氣 —— 每張圖卡自動長成「你」的樣子。
+**One engine. Swap a brand pack. A whole new style.**
+**一套引擎，換一份 brand pack，換一種風格。**
+
+From navy poster to street meme to a premium food brand — every card comes out unmistakably *you*.
+從藍焰海報、鄉民迷因到精品食品風 —— 每張圖卡都長成「你」的樣子，還內建 AI 審稿員把關擴散。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![Python](https://img.shields.io/badge/Python-3-blue.svg)
