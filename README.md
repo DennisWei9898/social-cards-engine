@@ -16,13 +16,27 @@ Your palette, your fonts, your voice — every card comes out looking like *you*
 
 **[English](#english)** · **[繁體中文](#繁體中文)**
 
+<img src="docs/demo.gif" width="88%" alt="one engine, many styles — demo" />
+
+<sub><b>One engine → swap the brand pack → a completely different style.</b><br/>同一套引擎，換一份 brand pack ＝ 換一種風格。</sub>
+
+<br/><br/>
+
 <p align="center">
-  <img src="docs/showcase/now6pm-01-cover.png" width="30%" alt="cover hook" />
-  <img src="docs/showcase/now6pm-02-data.png" width="30%" alt="data card" />
-  <img src="docs/showcase/now6pm-03-cta.png" width="30%" alt="CTA card" />
+  <img src="docs/showcase/now6pm-01-cover.png" width="30%" alt="now6pm navy cover" />
+  <img src="docs/showcase/now6pm-02-data.png" width="30%" alt="now6pm navy data" />
+  <img src="docs/showcase/now6pm-03-cta.png" width="30%" alt="now6pm navy CTA" />
 </p>
 
-<sub>Cards above are the <code>now6pm</code> brand pack. Swap the pack, get a different look — same engine.</sub>
+<sub><code>now6pm</code> pack — navy poster style · 藍焰海報風</sub>
+
+<p align="center">
+  <img src="docs/showcase/meme-01-skills.png" width="30%" alt="meme skills" />
+  <img src="docs/showcase/meme-02-subagents.png" width="30%" alt="meme subagents" />
+  <img src="docs/showcase/meme-03-cta.png" width="30%" alt="meme CTA" />
+</p>
+
+<sub><code>meme</code> pack — casual street style · 鄉民迷因風（same engine, another pack · 同一引擎，另一份 pack）</sub>
 
 </div>
 
