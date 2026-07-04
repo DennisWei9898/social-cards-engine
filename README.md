@@ -31,9 +31,9 @@ Your palette, your fonts, your voice — every card comes out looking like *you*
 <sub><code>now6pm</code> pack — navy poster style · 藍焰海報風</sub>
 
 <p align="center">
-  <img src="docs/showcase/meme-01-skills.png" width="30%" alt="meme skills" />
-  <img src="docs/showcase/meme-02-subagents.png" width="30%" alt="meme subagents" />
-  <img src="docs/showcase/meme-03-cta.png" width="30%" alt="meme CTA" />
+  <img src="docs/showcase/meme-01-cover.png" width="30%" alt="meme cover" />
+  <img src="docs/showcase/meme-02-claudemd.png" width="30%" alt="meme claude.md" />
+  <img src="docs/showcase/meme-03-skills.png" width="30%" alt="meme skills" />
 </p>
 
 <sub><code>meme</code> pack — casual street style · 鄉民迷因風（same engine, another pack · 同一引擎，另一份 pack）</sub>
