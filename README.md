@@ -16,7 +16,7 @@ Your palette, your fonts, your voice — every card comes out looking like *you*
 
 **[English](#english)** · **[繁體中文](#繁體中文)**
 
-<img src="docs/demo.gif" width="88%" alt="one engine, many styles — demo" />
+<img src="docs/demo-styles.gif" width="88%" alt="one engine, many styles — demo" />
 
 <sub><b>One engine → swap the brand pack → a completely different style.</b><br/>同一套引擎，換一份 brand pack ＝ 換一種風格。</sub>
 
