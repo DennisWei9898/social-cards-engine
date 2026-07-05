@@ -105,6 +105,8 @@ Your topic / article
 | **Starter templates** | navy poster / warm Morandi / warm-earth ELI5 |
 | **Brand pack architecture** | the "one brand, one pack" folder convention + how to add your own |
 | **Spread methodology** | 8–10 card structure templates + rules that make content get *saved* and *shared* |
+| **Asset intake gate** | brand character / logo → a cutout QA pipeline: zero white-halo on any background, machine-verified (`scripts/asset_prep.py` + `halo_check.py`) |
+| **Brand character pack guide** | a drop-in prompt + the intake gate to fuse your mascot into every card |
 | **Two AI reviewers** | `carousel-joker` (knowledge posts), `meme-joker` (memes — turns "funny" into checkable criteria) |
 | **Built-in meme pack** | white-bg Impact street style (with a copyright caution) |
 
@@ -219,6 +221,8 @@ MIT — modify, use, commercialize freely; keep the license notice.
 | **通用模板** | navy / 暖色 Morandi / 暖大地 ELI5 幾套起手式 |
 | **brand pack 架構** | 「一品牌一插件」的資料夾約定 + 怎麼新增你自己的品牌 |
 | **擴散方法論** | 8–10 張的結構模板 + 讓內容「被存、被傳」的規則 |
+| **資產入庫閘（去背 QA 管線）** | 品牌人物／logo → 任何底色零白暈、機器可驗的去背管線（`scripts/asset_prep.py` + `halo_check.py`）|
+| **品牌角色包引導** | 一組標準 prompt ＋ 入庫閘，把你的吉祥物融進每一張圖卡 |
 | **兩個 AI 審稿員** | `carousel-joker`（正經知識型）、`meme-joker`（迷因型，把「好笑」拆成可判定的要素）|
 | **內建迷因 pack** | 白底黃黑紅 Impact 鄉民風（附版權提醒）|
 
