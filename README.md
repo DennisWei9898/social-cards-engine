@@ -109,7 +109,7 @@ Your topic / article
 | **Spread methodology** | 8–10 card structure templates + rules that make content get *saved* and *shared* |
 | **Asset intake gate** | brand character / logo → a cutout QA pipeline: zero white-halo on any background, machine-verified (`scripts/asset_prep.py` + `halo_check.py`) |
 | **Image sourcing (copyright-first)** | need a photo or meme? auto-fetch candidates **with attribution** — CC / public-domain first (Openverse → Wikimedia, no key), optional Unsplash / Pexels, meme templates flagged for copyright; every image is logged with source + license so **you pick / swap**, the engine never silently uses one (`scripts/fetch_image.py`) |
-| **Design alignment gate** | before mass-producing, `huashu-design` mocks up **one cover card** so you confirm *"is this the look?"* — lock the style into the pack, then render the rest. No more rendering 12 cards in the wrong style and starting over |
+| **Design alignment gate** | before mass-producing, mock up **one cover card** so you confirm *"is this the look?"* — lock the style, then render the rest. No more rendering 12 cards in the wrong style and starting over (uses `huashu-design` if installed; otherwise the engine renders one real cover card for the same check) |
 | **Brand character pack guide** | a drop-in prompt + the intake gate to fuse your mascot into every card |
 | **Two AI reviewers** | `carousel-joker` (knowledge posts), `meme-joker` (memes — turns "funny" into checkable criteria) |
 | **Built-in meme pack** | white-bg Impact street style (with a copyright caution) |
@@ -135,6 +135,15 @@ This engine focuses on **make cards + structure + review**. These two skills run
 | **[`social-post`](https://github.com/Hao0321/claude-skill-social-post)** | 2026 algorithm signal weights (sends > saves > likes) as the spread yardstick + semi-auto posting (FB / IG / Threads) + learns your voice | just images; you write captions, post by hand, guess at spread |
 
 > The engine's spread rules stand on `social-post`'s algorithm research; the aesthetic QA leans on `huashu-design`. All three = **make it · lay it out · ship it · and it spreads**.
+
+**Install both companions (from their official repos):**
+
+```bash
+bash scripts/install_companions.sh        # clones them into ~/.claude/skills/
+```
+
+> This repo **bundles nothing** — the script just `git clone`s each skill from its **official source**, so you get it directly from the author under the author's own license.
+> ⚠️ **`huashu-design` is under a Personal Use License** (© alchaincyf / 花叔): free for personal / non-commercial use; **company, team, client-delivery or commercial use needs the author's written permission** (see its LICENSE). The engine stays fully usable **without** it — the design-alignment gate falls back to an engine-rendered cover card.
 
 ### Quick start (you *talk*, you don't write Python)
 
@@ -229,7 +238,7 @@ MIT — modify, use, commercialize freely; keep the license notice.
 | **擴散方法論** | 8–10 張的結構模板 + 讓內容「被存、被傳」的規則 |
 | **資產入庫閘（去背 QA 管線）** | 品牌人物／logo → 任何底色零白暈、機器可驗的去背管線（`scripts/asset_prep.py` + `halo_check.py`）|
 | **自動找圖（版權優先）** | 需要照片／迷因時**自動抓候選＋附出處**——先 CC／公眾領域（Openverse → Wikimedia，免 key），選用 Unsplash／Pexels，迷因附版權提醒；每張記來源＋授權，**引擎不自動採用、交你挑或換來源**（`scripts/fetch_image.py`）|
-| **設計對焦閘** | 量產前先用 `huashu-design` 產**一張封面卡樣**，你確認「**要長這樣嗎**」再鎖風格、量產其餘——不再整套 12 張渲錯風格才發現要打掉重做 |
+| **設計對焦閘** | 量產前先產**一張封面卡樣**，你確認「**要長這樣嗎**」再鎖風格、量產其餘——不再整套 12 張渲錯風格才打掉重做（有裝 `huashu-design` 就用它發散；沒裝則引擎渲一張真封面卡對焦）|
 | **品牌角色包引導** | 一組標準 prompt ＋ 入庫閘，把你的吉祥物融進每一張圖卡 |
 | **兩個 AI 審稿員** | `carousel-joker`（正經知識型）、`meme-joker`（迷因型，把「好笑」拆成可判定的要素）|
 | **內建迷因 pack** | 白底黃黑紅 Impact 鄉民風（附版權提醒）|
@@ -255,6 +264,15 @@ MIT — modify, use, commercialize freely; keep the license notice.
 | **[`social-post`（Hao0321）](https://github.com/Hao0321/claude-skill-social-post)** | **2026 演算法訊號權重**（私訊分享 > 收藏 > 讚）當擴散量尺 ＋ **半自動發文**（FB／IG／Threads）＋ 學你的貼文語氣 | 只有圖，得自己想文案、手動發、憑感覺猜擴散 |
 
 > 本引擎的**擴散規則**站在 `social-post` 的演算法研究肩膀上；**美感 QA** 靠 `huashu-design`。三個一起裝 ＝「**做得出圖 · 看得順版 · 發得出去 · 還會擴散**」的完整一條龍。
+
+**一鍵安裝兩個伴生 skill（從官方 repo 裝）：**
+
+```bash
+bash scripts/install_companions.sh        # clone 到 ~/.claude/skills/
+```
+
+> 這個 repo **不打包任何別人的作品** —— 腳本只是幫你從各 skill 的**官方來源** `git clone`，你是直接向作者取得、依作者授權使用。
+> ⚠️ **`huashu-design` 為 Personal Use License**（© alchaincyf／花叔）：個人／非商用免費；**公司、團隊、客戶交付、商用須先向作者取得書面授權**（見其 LICENSE）。**沒裝也完全能用**——設計對焦閘會退回「引擎渲一張真封面卡」的做法。
 
 ### 快速開始（你用「講」的，不寫 Python）
 
