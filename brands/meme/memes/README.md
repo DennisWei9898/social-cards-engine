@@ -2,7 +2,20 @@
 
 本 repo **不含任何梗圖檔**（經典梗多有版權，公開散布會侵權）。
 
-請自己抓乾淨模板放進這個資料夾，`render_template.py` 會引用：
+### 最快：用內建抓圖器（免安裝、附出處）
+
+```bash
+# 一鍵抓 imgflip 乾淨模板，會附來源＋版權提醒
+python3 ../../../scripts/fetch_image.py "drake"      --meme --out .
+python3 ../../../scripts/fetch_image.py "pikachu"    --meme --out .
+python3 ../../../scripts/fetch_image.py "brain"      --meme --out .
+python3 ../../../scripts/fetch_image.py "this is fine" --meme --out .
+```
+
+抓下來的檔名不一定剛好等於範本用的名字，**改名成下列名字**即可（`render_template.py` 缺圖時也會印出這串指令）。
+
+### 或手動下載
+
 - imgflip：https://imgflip.com/memetemplates （或 API `https://api.imgflip.com/get_memes`）
 - memes.tw（台灣最大）：https://memes.tw
 

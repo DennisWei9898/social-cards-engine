@@ -106,6 +106,7 @@ Your topic / article
 | **Brand pack architecture** | the "one brand, one pack" folder convention + how to add your own |
 | **Spread methodology** | 8–10 card structure templates + rules that make content get *saved* and *shared* |
 | **Asset intake gate** | brand character / logo → a cutout QA pipeline: zero white-halo on any background, machine-verified (`scripts/asset_prep.py` + `halo_check.py`) |
+| **Image sourcing (copyright-first)** | need a photo or meme? auto-fetch candidates **with attribution** — CC / public-domain first (Openverse → Wikimedia, no key), optional Unsplash / Pexels, meme templates flagged for copyright; every image is logged with source + license so **you pick / swap**, the engine never silently uses one (`scripts/fetch_image.py`) |
 | **Brand character pack guide** | a drop-in prompt + the intake gate to fuse your mascot into every card |
 | **Two AI reviewers** | `carousel-joker` (knowledge posts), `meme-joker` (memes — turns "funny" into checkable criteria) |
 | **Built-in meme pack** | white-bg Impact street style (with a copyright caution) |
@@ -159,7 +160,7 @@ Claude runs this line for you behind the scenes — you don't have to.
 ### Meme copyright (read first)
 
 - This repo ships **no meme image files** — classics (Drake / This is fine / Pikachu…) are **mostly still copyrighted**, and public redistribution infringes.
-- Grab clean templates yourself from [imgflip](https://imgflip.com/memetemplates) / [memes.tw](https://memes.tw) into `memes/`.
+- Grab clean templates from [imgflip](https://imgflip.com/memetemplates) / [memes.tw](https://memes.tw) into `memes/` — or let the engine fetch them **with source + copyright note**: `python3 scripts/fetch_image.py "drake" --meme --out brands/meme/memes`.
 - **Personal, non-commercial** is lower risk; **brand / client work** should use **original art** or **licensed** assets (`meme-joker` fails any brand job that uses a copyrighted meme).
 
 ### License
@@ -222,6 +223,7 @@ MIT — modify, use, commercialize freely; keep the license notice.
 | **brand pack 架構** | 「一品牌一插件」的資料夾約定 + 怎麼新增你自己的品牌 |
 | **擴散方法論** | 8–10 張的結構模板 + 讓內容「被存、被傳」的規則 |
 | **資產入庫閘（去背 QA 管線）** | 品牌人物／logo → 任何底色零白暈、機器可驗的去背管線（`scripts/asset_prep.py` + `halo_check.py`）|
+| **自動找圖（版權優先）** | 需要照片／迷因時**自動抓候選＋附出處**——先 CC／公眾領域（Openverse → Wikimedia，免 key），選用 Unsplash／Pexels，迷因附版權提醒；每張記來源＋授權，**引擎不自動採用、交你挑或換來源**（`scripts/fetch_image.py`）|
 | **品牌角色包引導** | 一組標準 prompt ＋ 入庫閘，把你的吉祥物融進每一張圖卡 |
 | **兩個 AI 審稿員** | `carousel-joker`（正經知識型）、`meme-joker`（迷因型，把「好笑」拆成可判定的要素）|
 | **內建迷因 pack** | 白底黃黑紅 Impact 鄉民風（附版權提醒）|
@@ -274,7 +276,7 @@ Claude 平常就是在背後幫你跑這一行 —— 你不用自己來。
 ### 迷因梗圖的版權（請先讀）
 
 - 本 repo **不含任何梗圖檔** —— 經典梗（Drake / This is fine / Pikachu…）**大多仍有版權**，公開散布會侵權。
-- 自己去 [imgflip](https://imgflip.com/memetemplates) / [memes.tw](https://memes.tw) 抓乾淨模板放進 `memes/`。
+- 自己去 [imgflip](https://imgflip.com/memetemplates) / [memes.tw](https://memes.tw) 抓乾淨模板放進 `memes/`——或讓引擎**自動抓＋附出處與版權提醒**：`python3 scripts/fetch_image.py "drake" --meme --out brands/meme/memes`。
 - **個人非商用**風險較低；**品牌 / 客戶案**請改**自繪原創**或**買授權**（`meme-joker` 會直接把用版權梗的品牌案判 FAIL）。
 
 ### 授權

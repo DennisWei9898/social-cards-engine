@@ -10,6 +10,10 @@ __pycache__/
 *.pyc
 .DS_Store
 
+# fetch_image.py 抓下來的圖與出處清單（執行期產物・因人而異・不上傳）
+**/fetched/
+fetch_manifest.json
+
 # 例外：README 用的 showcase 圖（now6pm navy + 無版權梗的 meme 風，刻意公開推廣）
 !docs/showcase/*.png
 # 例外：README 頂部風格切換示意 GIF

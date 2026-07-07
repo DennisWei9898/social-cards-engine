@@ -137,9 +137,25 @@ CARDS = [
 """, "8/8", False),
 ]
 
+def check_memes():
+    """缺梗圖時給出可執行的抓圖指令，而不是靜默出破圖。"""
+    need = ["thisisfine.jpg", "drake.jpg", "pikachu.jpg", "brain.jpg"]
+    missing = [f for f in need if not (PROJ/"memes"/f).exists()]
+    if not missing:
+        return
+    fetch = (PROJ.parent.parent/"scripts"/"fetch_image.py")
+    print("⚠️  缺梗圖檔：" + ", ".join(missing))
+    print("   這些是本機素材（repo 不附版權梗圖）。用內建抓圖器抓乾淨模板 + 出處：")
+    for f in missing:
+        kw = f.replace(".jpg", "")
+        print(f'     python3 "{fetch}" "{kw}" --meme --out "{PROJ}/memes"')
+    print("   抓完會附來源與版權提醒——個人非商用較低風險，品牌案請改自繪原創/授權。")
+    print("   （或自行下載後另存成上列檔名；先補齊再重跑本腳本。）\n")
+
 if __name__=="__main__":
     import sys; only=sys.argv[1:] or None
     print(f"=== claude-code-bp 迷因輪播 v2 ({W}x{H}) ===")
+    check_memes()
     for c in CARDS:
         if only and not any(k in c[0] for k in only): continue
         card(*c)
