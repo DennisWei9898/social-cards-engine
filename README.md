@@ -82,6 +82,8 @@ This engine moves "style" out of your head and into **one file**. Like a brand k
 Your topic / article
       │
       ▼   1. Pick a brand pack (your style file)
+      ▼   1.5 Align first — huashu-design mocks ONE cover card: "is this the look?"
+             (lock the style, then mass-produce · skip if you already have a pack)
    [ engine ] ──▶ split cards → HTML template → Chrome screenshot → a row of PNGs
       │
       ▼   2. Send to a joker for one review pass (structure / spread / humor, item-by-item PASS·FAIL)
@@ -107,6 +109,7 @@ Your topic / article
 | **Spread methodology** | 8–10 card structure templates + rules that make content get *saved* and *shared* |
 | **Asset intake gate** | brand character / logo → a cutout QA pipeline: zero white-halo on any background, machine-verified (`scripts/asset_prep.py` + `halo_check.py`) |
 | **Image sourcing (copyright-first)** | need a photo or meme? auto-fetch candidates **with attribution** — CC / public-domain first (Openverse → Wikimedia, no key), optional Unsplash / Pexels, meme templates flagged for copyright; every image is logged with source + license so **you pick / swap**, the engine never silently uses one (`scripts/fetch_image.py`) |
+| **Design alignment gate** | before mass-producing, `huashu-design` mocks up **one cover card** so you confirm *"is this the look?"* — lock the style into the pack, then render the rest. No more rendering 12 cards in the wrong style and starting over |
 | **Brand character pack guide** | a drop-in prompt + the intake gate to fuse your mascot into every card |
 | **Two AI reviewers** | `carousel-joker` (knowledge posts), `meme-joker` (memes — turns "funny" into checkable criteria) |
 | **Built-in meme pack** | white-bg Impact street style (with a copyright caution) |
@@ -199,6 +202,8 @@ MIT — modify, use, commercialize freely; keep the license notice.
 你的主題 / 文章
       │
       ▼   1. 選一個 brand pack（你的風格檔）
+      ▼   1.5 先對焦 —— huashu-design 產「一張封面卡樣」：「要長這樣嗎？」
+             （確認後鎖定風格再量產・已有 pack 可跳過）
    [ 引擎 ] ──▶ 拆卡 → HTML 模板 → Chrome 截圖出一排 PNG
       │
       ▼   2. 丟給 joker 審一輪（結構 / 擴散 / 幽默，逐條 PASS·FAIL）
@@ -224,6 +229,7 @@ MIT — modify, use, commercialize freely; keep the license notice.
 | **擴散方法論** | 8–10 張的結構模板 + 讓內容「被存、被傳」的規則 |
 | **資產入庫閘（去背 QA 管線）** | 品牌人物／logo → 任何底色零白暈、機器可驗的去背管線（`scripts/asset_prep.py` + `halo_check.py`）|
 | **自動找圖（版權優先）** | 需要照片／迷因時**自動抓候選＋附出處**——先 CC／公眾領域（Openverse → Wikimedia，免 key），選用 Unsplash／Pexels，迷因附版權提醒；每張記來源＋授權，**引擎不自動採用、交你挑或換來源**（`scripts/fetch_image.py`）|
+| **設計對焦閘** | 量產前先用 `huashu-design` 產**一張封面卡樣**，你確認「**要長這樣嗎**」再鎖風格、量產其餘——不再整套 12 張渲錯風格才發現要打掉重做 |
 | **品牌角色包引導** | 一組標準 prompt ＋ 入庫閘，把你的吉祥物融進每一張圖卡 |
 | **兩個 AI 審稿員** | `carousel-joker`（正經知識型）、`meme-joker`（迷因型，把「好笑」拆成可判定的要素）|
 | **內建迷因 pack** | 白底黃黑紅 Impact 鄉民風（附版權提醒）|
